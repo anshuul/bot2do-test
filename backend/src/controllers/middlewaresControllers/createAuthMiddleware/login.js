@@ -91,7 +91,7 @@ const login = async (req, res, { userModel }) => {
     .status(200)
     .cookie('token', token, {
       maxAge: req.body.remember ? 365 * 24 * 60 * 60 * 1000 : null,
-      sameSite: 'none',
+      sameSite: 'Lax',
       httpOnly: true,
       secure: false,
       domain: req.hostname,
